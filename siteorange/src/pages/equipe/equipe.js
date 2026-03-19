@@ -4,6 +4,7 @@ function Equipe() {
   return (
     <>
       <Navbar />
+      
     </>
   )
 }

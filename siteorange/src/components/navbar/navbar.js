@@ -1,18 +1,20 @@
+import { Link } from 'react-router-dom';
+import logo from '../../assets/logoOrange.svg'
 
 function Navbar() {
   return (
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
         <div class="navbar-brand">
-          <a class="stretched-link" href="#">
+          <Link to="/">
             <img
-              src="/docs/5.3/assets/brand/orange-logo.svg"
+              src={logo}
               width="50"
               height="50"
               alt="Boosted - Back to Home"
               loading="lazy"
             />
-          </a>
+          </Link>
         </div>
         <button
           class="navbar-toggler"
@@ -25,17 +27,17 @@ function Navbar() {
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-link active" aria-current="page" href="#">
+        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div className="navbar-nav">
+            <Link className="nav-link" to="/">
               Accueil
-            </a>
-            <a class="nav-link" href="#">
+            </Link>
+            <Link className="nav-link" to="/equipe">
               Équipe
-            </a>
-            <a class="nav-link" href="#">
+            </Link>
+            <Link className="nav-link" to="/projet">
               Mes Projets
-            </a>
+            </Link>
           </div>
         </div>
       </div>
