@@ -1,6 +1,4 @@
-import Footer from "../../components/footer/footer";
 import ListeMissions from "../listeMissions/listeMissions";
-import Navbar from "../../components/navbar/navbar";
 import { Link } from "react-router-dom";
 
 function Projet() {
@@ -8,7 +6,7 @@ function Projet() {
     <>
       <div className="container mt-5">
         <div className="d-flex justify-content-between align-items-center">
-          <h1>Mes missions</h1>
+          <h1><span style={{color: '#ff7900'}}>Mes</span> missions</h1>
           <div className="d-flex align-items-center gap-3">
             <ul className="list-unstyled d-flex gap-2 flex-wrap m-0">
               <li>

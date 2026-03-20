@@ -10,7 +10,9 @@ function Accueil() {
       <div className="container mt-5">
         <div className="row align-items-center">
           <div className="col-md-6">
-            <h1>Bienvenue sur mon site</h1>
+            <h1>
+              Bienvenue sur mon <span style={{ color: "#ff7900" }}>site</span>
+            </h1>
             <hr></hr>
             <p>
               Dans le cadre de mon stage de 2ème année de BUT Informatique, j'ai
@@ -78,7 +80,7 @@ function Accueil() {
                     aria-expanded="true"
                     aria-controls="panelsStayOpen-collapseOne"
                   >
-                    Les objectifs de mon stage
+                    Les&nbsp; <span style={{ color: "#ff7900" }}> objectifs</span> &nbsp;de mon stage
                   </button>
                 </h2>
                 <div
