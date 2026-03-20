@@ -3,7 +3,7 @@ import logo from '../../assets/logoOrange.svg'
 
 function Navbar() {
   return (
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="container-fluid">
         <div class="navbar-brand">
           <Link to="/">

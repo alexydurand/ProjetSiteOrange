@@ -1,11 +1,12 @@
-import Navbar from '../../components/navbar/navbar'
 
 function Equipe() {
   return (
     <>
-      <Navbar />
-      
+      <div className="container mt-5">
+        <h1>Présentation de l'équipe</h1>
+      </div>
     </>
+
   )
 }
 
