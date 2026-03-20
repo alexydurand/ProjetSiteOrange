@@ -5,7 +5,7 @@ function Footer() {
       <h2 class="visually-hidden">Sitemap & information</h2>
       <div class="container-xxl footer-terms">
         <ul class="navbar-nav gap-md-3">
-          <li class="fw-bold">© Orange 2025</li>
+          <li class="fw-bold">© Orange 2026</li>
         </ul>
       </div>
     </footer>
