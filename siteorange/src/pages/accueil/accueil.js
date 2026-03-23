@@ -7,6 +7,7 @@ import imgCampus from "../../assets/campusOrange.jpg";
 function Accueil() {
   return (
     <>
+      {/* Présentation site + 4 images logo */}
       <div className="container mt-5">
         <div className="row align-items-center">
           <div className="col-md-6">
@@ -30,14 +31,14 @@ function Accueil() {
                 <img
                   src={logoPowerApps}
                   className="img-fluid w-50"
-                  alt="image 1"
+                  alt="Logo Power Apps"
                 />
               </div>
               <div className="col-6">
                 <img
                   src={logoPowerAutomate}
                   className="img-fluid w-50"
-                  alt="image 2"
+                  alt="Logo Power Automate"
                 />
               </div>
             </div>
@@ -46,18 +47,18 @@ function Accueil() {
                 <img
                   src={logoSharePoint}
                   className="img-fluid w-50"
-                  alt="image 3"
+                  alt="Logo SharePoint"
                 />
               </div>
               <div className="col-6">
-                <img src={logoReact} className="img-fluid w-50" alt="image 3" />
+                <img src={logoReact} className="img-fluid w-50" alt="Logo React" />
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* objectifs de mon stage + image campus */}
+      {/* Objectifs de mon stage + image campus */}
 
       <div className="container mt-5">
         <div className="row align-items-center">
@@ -65,7 +66,7 @@ function Accueil() {
             <img
               src={imgCampus}
               className="img-fluid w-80"
-              alt="image campus"
+              alt="Campus Orange Tolosa"
             />
           </div>
           <div className="col-md-6">
@@ -87,6 +88,7 @@ function Accueil() {
                   id="panelsStayOpen-collapseOne"
                   class="accordion-collapse collapse show"
                 >
+                  {/* Liste des objectifs de mon stage */}
                   <ol class="list-group list-group-numbered">
                     <li class="list-group-item">Collaborer en équipe.</li>
                     <li class="list-group-item">
