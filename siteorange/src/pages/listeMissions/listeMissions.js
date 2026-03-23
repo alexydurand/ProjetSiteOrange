@@ -1,8 +1,17 @@
-
+import { useState, useEffect } from "react";
 
 function ListeMissions() {
+  const [missions, setMissions] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3001/api/missions")
+      .then((res) => res.json())
+      .then((data) => setMissions(data));
+  }, []);
+
   return (
     <div className="container mt-5">
+      {missions.map((mission) => (
         <div class="accordion" id="accordionExample">
           <div class="accordion-item">
             <h2 class="accordion-header">
@@ -14,7 +23,7 @@ function ListeMissions() {
                 aria-expanded="true"
                 aria-controls="collapseOne"
               >
-                Mission 1
+                {mission.nom} : venant de {mission.provenance}
               </button>
             </h2>
             <div
@@ -23,58 +32,13 @@ function ListeMissions() {
               data-bs-parent="#accordionExample"
             >
               <div class="accordion-body">
-                <strong>....</strong>
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseTwo"
-                aria-expanded="false"
-                aria-controls="collapseTwo"
-              >
-                Mission 2
-              </button>
-            </h2>
-            <div
-              id="collapseTwo"
-              class="accordion-collapse collapse"
-              data-bs-parent="#accordionExample"
-            >
-              <div class="accordion-body">
-                
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseThree"
-                aria-expanded="false"
-                aria-controls="collapseThree"
-              >
-                Mission 3
-              </button>
-            </h2>
-            <div
-              id="collapseThree"
-              class="accordion-collapse collapse"
-              data-bs-parent="#accordionExample"
-            >
-              <div class="accordion-body">
-                
+                <p>{mission.description}</p>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      ))}
+    </div>
   );
 }
 

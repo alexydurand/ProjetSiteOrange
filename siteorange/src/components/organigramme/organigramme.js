@@ -119,7 +119,7 @@ function Organigramme() {
                 title="Direction Technique Orange France"
               >
                 <div className="accordion" id="accordionPFC">
-                  <AccordionItem id="collapsePFC" title="PFC">
+                  <AccordionItem id="collapsePFC" title="PFC (Plateformes Cloud)">
                     <ul>
                       <li>
                         <a

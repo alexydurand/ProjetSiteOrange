@@ -1,11 +1,26 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Navbar from "../../components/navbar/navbar";
 
 function FormulaireMission() {
   const [nom, setNom] = useState('');
   const [description, setDescription] = useState('');
   const [provenance, setProvenance] = useState('');
+  const navigate = useNavigate();
 
   const formulaireValide = nom !== '' && description !== '' && provenance !== '';
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+
+    await fetch('http://localhost:3001/api/missions', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ nom, description, provenance })
+    })
+
+    navigate('/projet')
+  }
 
   return (
     <>
@@ -13,7 +28,7 @@ function FormulaireMission() {
         <h1>Ajout d'une mission</h1>
       </div>
       <div className="container mt-5">
-        <form>
+        <form onSubmit={handleSubmit}>
           <fieldset>
             <div className="mb-3">
               <label htmlFor="nom" className="form-label is-required">
@@ -26,6 +41,7 @@ function FormulaireMission() {
                 placeholder="Nom de la mission requis"
                 value={nom}
                 onChange={(e) => setNom(e.target.value)}
+                autoComplete="off"
               />
             </div>
             <div className="mb-3">
@@ -39,6 +55,7 @@ function FormulaireMission() {
                 placeholder="Description de la mission requise"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
+                autoComplete="off"
               />
             </div>
             <div className="mb-3">
