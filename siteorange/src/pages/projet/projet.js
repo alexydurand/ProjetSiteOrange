@@ -1,7 +1,10 @@
 import ListeMissions from "../listeMissions/listeMissions";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 function Projet() {
+  const [filtre, setFiltre] = useState('all');
+
   return (
     <>
       <div className="container mt-5">
@@ -10,53 +13,20 @@ function Projet() {
           <div className="d-flex align-items-center gap-3">
             <ul className="list-unstyled d-flex gap-2 flex-wrap m-0">
               <li>
-                <input
-                  type="radio"
-                  className="btn-check"
-                  name="filtre"
-                  id="btncheck-all"
-                  autoComplete="off"
-                  defaultChecked
-                />
-                <label className="tag" htmlFor="btncheck-all">
-                  Toutes mes missions
-                </label>
+                <input type="radio" className="btn-check" name="filtre" id="btncheck-all" value="all" autoComplete="off" defaultChecked onChange={(e) => setFiltre(e.target.value)} />
+                <label className="tag" htmlFor="btncheck-all">Toutes mes missions</label>
               </li>
               <li>
-                <input
-                  type="radio"
-                  className="btn-check"
-                  name="filtre"
-                  id="btncheck-alexis"
-                  autoComplete="off"
-                />
-                <label className="tag" htmlFor="btncheck-alexis">
-                  Alexis
-                </label>
+                <input type="radio" className="btn-check" name="filtre" id="btncheck-alexis" value="Alexis" autoComplete="off" onChange={(e) => setFiltre(e.target.value)} />
+                <label className="tag" htmlFor="btncheck-alexis">Alexis</label>
               </li>
               <li>
-                <input
-                  type="radio"
-                  className="btn-check"
-                  name="filtre"
-                  id="btncheck-chloe"
-                  autoComplete="off"
-                />
-                <label className="tag" htmlFor="btncheck-chloe">
-                  Chloé
-                </label>
+                <input type="radio" className="btn-check" name="filtre" id="btncheck-chloe" value="Chloé" autoComplete="off" onChange={(e) => setFiltre(e.target.value)} />
+                <label className="tag" htmlFor="btncheck-chloe">Chloé</label>
               </li>
               <li>
-                <input
-                  type="radio"
-                  className="btn-check"
-                  name="filtre"
-                  id="btncheck-matthys"
-                  autoComplete="off"
-                />
-                <label className="tag" htmlFor="btncheck-matthys">
-                  Matthys
-                </label>
+                <input type="radio" className="btn-check" name="filtre" id="btncheck-matthys" value="Matthys" autoComplete="off" onChange={(e) => setFiltre(e.target.value)} />
+                <label className="tag" htmlFor="btncheck-matthys">Matthys</label>
               </li>
             </ul>
             <Link to="/formulaireMission">
@@ -67,7 +37,7 @@ function Projet() {
           </div>
         </div>
       </div>
-      <ListeMissions />
+      <ListeMissions filtre={filtre} />
     </>
   );
 }

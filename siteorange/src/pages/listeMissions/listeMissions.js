@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-function ListeMissions() {
+function ListeMissions({ filtre }) {
   const [missions, setMissions] = useState([]);
 
   useEffect(() => {
@@ -9,29 +9,34 @@ function ListeMissions() {
       .then((data) => setMissions(data));
   }, []);
 
+  let missionsFiltrees;
+  if (filtre === 'all') {
+    missionsFiltrees = missions;
+  } else {
+    missionsFiltrees = missions.filter(mission => mission.provenance === filtre);
+  }
+
   return (
     <div className="container mt-5">
-      {missions.map((mission) => (
-        <div class="accordion" id="accordionExample">
-          <div class="accordion-item">
-            <h2 class="accordion-header">
+      {missionsFiltrees.map((mission) => (
+        <div className="accordion mb-2" key={mission.id}>
+          <div className="accordion-item">
+            <h2 className="accordion-header">
               <button
-                class="accordion-button"
+                className="accordion-button"
                 type="button"
                 data-bs-toggle="collapse"
-                data-bs-target="#collapseOne"
+                data-bs-target={`#collapse-${mission.id}`}
                 aria-expanded="true"
-                aria-controls="collapseOne"
               >
                 {mission.nom} : venant de {mission.provenance}
               </button>
             </h2>
             <div
-              id="collapseOne"
-              class="accordion-collapse collapse show"
-              data-bs-parent="#accordionExample"
+              id={`collapse-${mission.id}`}
+              className="accordion-collapse collapse show"
             >
-              <div class="accordion-body">
+              <div className="accordion-body">
                 <p>{mission.description}</p>
               </div>
             </div>
