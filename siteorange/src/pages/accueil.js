@@ -1,15 +1,17 @@
-import logoPowerApps from "../../assets/powerAppsLogo.png";
-import logoPowerAutomate from "../../assets/powerAutomateLogo.png";
-import logoSharePoint from "../../assets/sharePointLogo.png";
-import logoReact from "../../assets/reactLogo.png";
-import imgCampus from "../../assets/campusOrange.jpg";
+// Imports des images/logos
+import logoPowerApps from "../assets/powerAppsLogo.png";
+import logoPowerAutomate from "../assets/powerAutomateLogo.png";
+import logoSharePoint from "../assets/sharePointLogo.png";
+import logoReact from "../assets/reactLogo.png";
+import imgCampus from "../assets/campusOrange.jpg";
 
 function Accueil() {
   return (
     <>
-      {/* Présentation site + 4 images logo */}
+      {/* Premier container : paragraphe bienvenue + 4 logos */}
       <div className="container mt-5">
         <div className="row align-items-center">
+          {/* Première colonne : paragraphe de bienvenue */}
           <div className="col-md-6">
             <h1>
               Bienvenue sur mon <span style={{ color: "#ff7900" }}>site</span>
@@ -24,9 +26,11 @@ function Accueil() {
               travaillé ainsi que l'équipe qui m'accompagne.
             </p>
           </div>
-
+          {/* Deuxième colonne : 4 logos */}
           <div className="col-md-6 ps-5">
+            {/* Première ligne qui va contenir 2 logos */}
             <div className="row">
+              {/* Première colonne dans cette première ligne : logoPowerApps */}
               <div className="col-6">
                 <img
                   src={logoPowerApps}
@@ -34,6 +38,7 @@ function Accueil() {
                   alt="Logo Power Apps"
                 />
               </div>
+              {/* Deuxième colonne dans cette première ligne : logo PowerAutomate */}
               <div className="col-6">
                 <img
                   src={logoPowerAutomate}
@@ -42,7 +47,9 @@ function Accueil() {
                 />
               </div>
             </div>
+            {/* Deuxième ligne qui va contenir les 2 autres logos */}
             <div className="row mt-4">
+              {/* Première colonne de cette deuxième ligne : logo SP */}
               <div className="col-6">
                 <img
                   src={logoSharePoint}
@@ -50,6 +57,7 @@ function Accueil() {
                   alt="Logo SharePoint"
                 />
               </div>
+              {/* Deuxième colonne de cette deuxième ligne : logo React */}
               <div className="col-6">
                 <img src={logoReact} className="img-fluid w-50" alt="Logo React" />
               </div>
@@ -58,7 +66,7 @@ function Accueil() {
         </div>
       </div>
 
-      {/* Objectifs de mon stage + image campus */}
+      {/* Deuxième container : image campus + objectifs de mon stage */}
 
       <div className="container mt-5">
         <div className="row align-items-center">
@@ -89,7 +97,7 @@ function Accueil() {
                   class="accordion-collapse collapse show"
                 >
                   {/* Liste des objectifs de mon stage */}
-                  <ol class="list-group list-group-numbered">
+                  <ol class="list-group list-group-numbered"> {/* ol = liste ordonnée */}
                     <li class="list-group-item">Collaborer en équipe.</li>
                     <li class="list-group-item">
                       Comprendre la configuration des serveurs.

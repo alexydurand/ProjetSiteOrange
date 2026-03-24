@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Accueil from "./pages/accueil/accueil";
+import Accueil from "./pages/accueil";
 import Equipe from "./pages/equipe/equipe";
-import Projets from "./pages/projet/projet";
-import FormulaireMission from "./pages/formulaireMission/formulaireMission";
+import Projets from "./pages/projet";
+import FormulaireMission from "./pages/formulaireMission";
 import Footer from "./components/footer";
 import Navbar from "./components/navbar";
 

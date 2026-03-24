@@ -1,3 +1,5 @@
+/* enlève les traits inférieurs de l'accordion */
+
 .accordion-item:last-child {
   border-bottom: none !important;
 }

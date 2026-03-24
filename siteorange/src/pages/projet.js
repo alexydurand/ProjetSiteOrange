@@ -1,15 +1,16 @@
-import ListeMissions from "../listeMissions/listeMissions";
+import ListeMissions from "./listeMissions";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
 function Projet() {
+  //
   const [filtre, setFiltre] = useState('all');
 
   return (
     <>
       <div className="container mt-5">
         <div className="d-flex justify-content-between align-items-center">
-          <h1><span style={{color: '#ff7900'}}>Mes</span> missions</h1>
+          <h1>Mes<span style={{color: '#ff7900'}}> missions</span></h1>
           <div className="d-flex align-items-center gap-3">
             <ul className="list-unstyled d-flex gap-2 flex-wrap m-0">
               <li>
