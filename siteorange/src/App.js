@@ -3,8 +3,8 @@ import Accueil from "./pages/accueil/accueil";
 import Equipe from "./pages/equipe/equipe";
 import Projets from "./pages/projet/projet";
 import FormulaireMission from "./pages/formulaireMission/formulaireMission";
-import Footer from "./components/footer/footer";
-import Navbar from "./components/navbar/navbar";
+import Footer from "./components/footer";
+import Navbar from "./components/navbar";
 
 function App() {
   return (

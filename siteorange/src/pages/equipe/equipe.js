@@ -1,4 +1,4 @@
-import Organigramme from "../../components/organigramme/organigramme";
+import Organigramme from "../../components/organigramme";
 import '../equipe/equipe.css';
 
 function Equipe() {

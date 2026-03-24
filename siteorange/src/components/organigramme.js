@@ -9,7 +9,7 @@ function AccordionItem({ id, title, children }) {
           className="accordion-button"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target={`#${id}`}
+          data-bs-target={`#${id}`} /* dit à Boosted quel élément ouvrir/fermer quand je clique sur le bouton */
         >
           {title}
         </button>
@@ -26,19 +26,23 @@ function AccordionItem({ id, title, children }) {
 function Organigramme() {
   return (
     <div className="accordion" id="accordionOrangeFrance">
+      {/* Accordion principal Orange France qui englobe tous les autres accordions */}
       <AccordionItem id="collapseOrangeFrance" title="Orange France">
+        {/*  */}
         <div className="row mt-2">
+          {/* Division de l'accordion OF en deux sous accordions -> accordion Opérations */}
           <div className="col-md-6">
             <div className="accordion" id="accordionOperations">
+              {/* Accordion Opérations dans OF */}
               <AccordionItem id="collapseOperations" title="Opérations">
                 <div className="accordion" id="accordionDISU">
+                  {/* Accordion DISU dans Opérations */}
                   <AccordionItem id="collapseDISU" title="DISU">
                     <div className="accordion" id="accordionDTI">
-                      <AccordionItem
-                        id="collapseDTI"
-                        title="Direction Technique et Intégration"
-                      >
+                      {/* Accordion DTI dans DISU */}
+                      <AccordionItem id="collapseDTI" title="Direction Technique et Intégration">
                         <div className="accordion" id="accordionAPV">
+                          {/* Accordion APV dans DTI */}
                           <AccordionItem id="collapseAPV" title="APV">
                             <ul>
                               <li>
@@ -52,8 +56,10 @@ function Organigramme() {
                               </li>
                             </ul>
                             <div className="row mt-3">
+                              {/* Division de l'accordion APV en deux sous accordions -> AMEC */}
                               <div className="col-md-6">
                                 <div className="accordion" id="accordionAMEC">
+                                  {/* Accordion AMEC dans APV */}
                                   <AccordionItem id="collapseAMEC" title="AMEC">
                                     <ul>
                                       <li>
@@ -88,6 +94,7 @@ function Organigramme() {
                                 </div>
                               </div>
                               <div className="col-md-6">
+                                {/* Accordion BAVO dans APV */}
                                 <div className="accordion" id="accordionBAVO">
                                   <AccordionItem id="collapseBAVO" title="BAVO">
                                     <li>
@@ -112,13 +119,13 @@ function Organigramme() {
               </AccordionItem>
             </div>
           </div>
+          {/* Deuxième colonne de l'accordion principal (OF) */}
           <div className="col-md-6">
             <div className="accordion" id="accordionDTOF">
-              <AccordionItem
-                id="collapseDTOF"
-                title="Direction Technique Orange France"
-              >
+              {/* Accordion DTOF dans OF */}
+              <AccordionItem id="collapseDTOF" title="Direction Technique Orange France">
                 <div className="accordion" id="accordionPFC">
+                  {/* Accordion PFC dans DTOF */}
                   <AccordionItem id="collapsePFC" title="PFC (Plateformes Cloud)">
                     <ul>
                       <li>
