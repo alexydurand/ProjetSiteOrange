@@ -1,9 +1,9 @@
-import ListeMissions from "./listeMissions";
-import { Link } from "react-router-dom";
+import ListeMissions from "./listeMissions/listeMissions";
+import { NavLink } from "react-router-dom";
 import { useState } from "react";
 
 function Projet() {
-  //
+  // variable filtre , valeur de base 'all' : toutes les missions
   const [filtre, setFiltre] = useState('all');
 
   return (
@@ -14,6 +14,7 @@ function Projet() {
           <div className="d-flex align-items-center gap-3">
             <ul className="list-unstyled d-flex gap-2 flex-wrap m-0">
               <li>
+                {/* type radio pour avoir qu'un seul bouton selectionnable à la fois */}
                 <input type="radio" className="btn-check" name="filtre" id="btncheck-all" value="all" autoComplete="off" defaultChecked onChange={(e) => setFiltre(e.target.value)} />
                 <label className="tag" htmlFor="btncheck-all">Toutes mes missions</label>
               </li>
@@ -30,14 +31,16 @@ function Projet() {
                 <label className="tag" htmlFor="btncheck-matthys">Matthys</label>
               </li>
             </ul>
-            <Link to="/formulaireMission">
+            {/* Redirection vers la page formulaire mission */}
+            <NavLink to="/formulaireMission">
               <button type="button" className="btn btn-primary">
                 Ajouter une mission
               </button>
-            </Link>
+            </NavLink>
           </div>
         </div>
       </div>
+      {/* appel du composant ListeMissions avec comme paramètre : filtre (définis par défaut sur all)*/}
       <ListeMissions filtre={filtre} />
     </>
   );
