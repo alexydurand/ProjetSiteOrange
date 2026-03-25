@@ -1,6 +1,6 @@
 import { useState } from "react"; // valeur qui peut changer
 import { useNavigate } from "react-router-dom"; // Redirection depuis du code et non depuis un clic
-
+import { NavLink } from "react-router-dom";
 
 function FormulaireMission() {
   // Déclarations variables
@@ -13,7 +13,7 @@ function FormulaireMission() {
   const formulaireValide = nom !== '' && description !== '' && provenance !== '';
 
   const handleSubmit = async (e) => { // async permet d'utiliser await
-    e.preventDefault() // empeche le rechargement de la page quand on soumet le form
+    e.preventDefault() // empêche le rechargement de la page quand on soumet le form
 
     await fetch('http://localhost:3001/api/missions', { 
       method: 'POST', // on envoie des données à l'API
@@ -82,6 +82,7 @@ function FormulaireMission() {
               </select>
             </div>
             {/* Le bouton Valider est désactivé si le booléen est faux */}
+            <p>* Obligatoire</p>
             <button
               type="submit"
               className="btn btn-primary mt-2"
@@ -89,6 +90,12 @@ function FormulaireMission() {
             >
               Valider
             </button>
+            &nbsp;
+            <NavLink to='/projet'>
+              <button className="btn btn-secondary mt-2">
+                Annuler
+              </button>
+            </NavLink>
           </fieldset>
         </form>
       </div>

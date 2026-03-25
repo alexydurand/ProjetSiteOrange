@@ -6,7 +6,7 @@ import FormulaireMission from "./pages/formulaireMission";
 import Footer from "./components/footer";
 import Navbar from "./components/navbar";
 import ModificationMission from "./pages/modificationMission";
-import SupprimerMission from "./pages/suppressionMission";
+
 
 function App() {
   return (
@@ -24,8 +24,8 @@ function App() {
           <Route path="/equipe" element={<Equipe />} />
           <Route path="/projet" element={<Projets />} />
           <Route path="/formulaireMission" element={<FormulaireMission />} />
-          <Route path="/modificationMission" element={<ModificationMission />} />
-          <Route path="/supprimerMission" element={<SupprimerMission />} />
+          <Route path="/modificationMission/:id" element={<ModificationMission />} />
+          
         </Routes>
         </main>
         <Footer />

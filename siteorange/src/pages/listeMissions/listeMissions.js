@@ -3,18 +3,24 @@
 import { useState, useEffect } from "react";
 import { FaTrash } from "react-icons/fa";
 import { MdEdit } from "react-icons/md";
-import '../listeMissions/listeMissions.css';
+import "../listeMissions/listeMissions.css";
 import { NavLink } from "react-router-dom";
+import SupprimerMission from "../../components/modalSuppression";
 
 function ListeMissions({ filtre }) {
   // missions : la valeur actuelle, setMissions : fonction pour la modifier , [] : valeur de départ
   const [missions, setMissions] = useState([]);
+  const [missionSelectionnee, setMissionSelectionnee] = useState(null);
+
+  const chargerMissions = () => {
+    fetch("http://localhost:3001/api/missions")
+      .then((res) => res.json())
+      .then((data) => setMissions(data));
+  };
 
   useEffect(() => {
-    fetch("http://localhost:3001/api/missions") // fetch -> fait une requête HTTP GET vers l'API
-      .then((res) => res.json()) // quand l'API répond -> convertit la réponse en JSON
-      .then((data) => setMissions(data)); // et quand le JSON est prêt -> stocke les données dans le useState
-  }, []); // exécute ce code 1 seule fois au chargement
+    chargerMissions();
+  }, []);
 
   let missionsFiltrees; // let = variable modifiable
   if (filtre === "all") {
@@ -23,17 +29,17 @@ function ListeMissions({ filtre }) {
     missionsFiltrees = missions.filter(
       (mission) => mission.provenance === filtre,
     ); // si non on parcourt chaque mission et on garde
-    // que celles dont la provenance correspond au filtre
+    // que celles dont la provenance correspond au filtre sélectionné
   }
 
   return (
     <div className="container mt-5">
+      <SupprimerMission id={missionSelectionnee} rafraichir={chargerMissions} />
       {missionsFiltrees.map(
         (
           mission, //.map : méhode qui parcourt chaque élément d'un tableau
         ) => (
           <div className="accordion mb-2" key={mission.id}>
-            {" "}
             {/* Récupération de l'id de la mission */}
             <div className="accordion-item">
               <h2 className="accordion-header">
@@ -51,12 +57,20 @@ function ListeMissions({ filtre }) {
                     </span>
                   </span>
                   <span className="d-flex gap-2 ms-auto me-2">
-                    <NavLink to='/modificationMission'>
+                    <NavLink to={`/modificationMission/${mission.id}`}>
                       <MdEdit />
                     </NavLink>
-                    <NavLink to='/supprimerMission'>
+
+                    <span
+                      className="trash-icon"
+                      data-bs-toggle="modal"
+                      data-bs-target="#modalSupprimer"
+                      onClick={(e) =>
+                        setMissionSelectionnee(mission.id)
+                      }
+                    >
                       <FaTrash />
-                    </NavLink>
+                    </span>
                   </span>
                 </button>
               </h2>

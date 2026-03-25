@@ -7,3 +7,12 @@
   display: flex !important;
   align-items: center !important;
 }
+
+.trash-icon {
+  cursor: pointer;
+  color: black;
+}
+
+.trash-icon:hover {
+  color: #ff7900 !important;
+}
