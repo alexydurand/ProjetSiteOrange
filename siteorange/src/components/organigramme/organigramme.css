@@ -1,0 +1,9 @@
+.accordion-button {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ul.li:hover{
+  background-color: aqua;
+}

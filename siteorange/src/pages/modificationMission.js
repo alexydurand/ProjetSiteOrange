@@ -6,7 +6,8 @@ function ModifierMission() {
   const [description, setDescription] = useState("");
   const [provenance, setProvenance] = useState("");
   const navigate = useNavigate();
-  const { id } = useParams(); // récupère l'id depuis l'URL
+  const { id } = useParams(); // récupère les param dynamiques de l'URL (dans App.js : :id est une parametre dynamique)
+                              // retourne un objet avec les param de l'URL { id : "211982"}
   const [missionOriginale, setMissionOriginale] = useState(null); // création variable qui stocke les données de la mission (utile pour desactiver le bouton si aucun changement)
 
   useEffect(() => {

@@ -21,23 +21,20 @@ function Accueil() {
             <p class="fs-4">
               Dans le cadre de mon stage de 2ème année de BUT Informatique, j'ai
               intégré l'équipe DISU d'Orange Campus Tolosa à Balma.
-              <br></br><br></br>
+              <br></br>
+              <br></br>
               Ce site présente mon expérience, les projets sur lesquels j'ai
               travaillé ainsi que l'équipe qui m'accompagne.
             </p>
-            
             <NavLink to="/equipe">
-              <button className="btn btn-primary btn-lg mt-2">
-                L'équipe
-              </button>
+              <button className="btn btn-primary btn-lg mt-2">L'équipe</button>
             </NavLink>
-            &nbsp; 
+            &nbsp;
             <NavLink to="/projet">
               <button className="btn btn-secondary btn-lg mt-2">
                 Mes missions
               </button>
             </NavLink>
-
           </div>
           {/* Deuxième colonne : 4 logos */}
           <div className="col-md-6 ps-5">
@@ -72,7 +69,11 @@ function Accueil() {
               </div>
               {/* Deuxième colonne de cette deuxième ligne : logo React */}
               <div className="col-6">
-                <img src={logoReact} className="img-fluid w-50" alt="Logo React" />
+                <img
+                  src={logoReact}
+                  className="img-fluid w-50"
+                  alt="Logo React"
+                />
               </div>
             </div>
           </div>
@@ -99,10 +100,12 @@ function Accueil() {
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#panelsStayOpen-collapseOne"
-                    aria-expanded="true"
-                    aria-controls="panelsStayOpen-collapseOne"
                   >
-                    Les&nbsp; <span style={{ color: "#ff7900" }}> objectifs</span> &nbsp;de mon stage
+                    <span>
+                      Les&nbsp;
+                      <span style={{ color: "#ff7900" }}>objectifs</span>
+                      &nbsp;de mon stage
+                    </span>
                   </button>
                 </h2>
                 <div
@@ -110,7 +113,9 @@ function Accueil() {
                   class="accordion-collapse collapse show"
                 >
                   {/* Liste des objectifs de mon stage */}
-                  <ol class="list-group list-group-numbered fs-4"> {/* ol = liste ordonnée */}
+                  <ol class="list-group list-group-numbered fs-4">
+                    {" "}
+                    {/* ol = liste ordonnée */}
                     <li class="list-group-item">Collaborer en équipe.</li>
                     <li class="list-group-item">
                       Comprendre la configuration des serveurs.

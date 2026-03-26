@@ -3,9 +3,9 @@
 import { useState, useEffect } from "react";
 import { FaTrash } from "react-icons/fa";
 import { MdEdit } from "react-icons/md";
-import "../listeMissions/listeMissions.css";
+import "./listeMissions.css";
 import { NavLink } from "react-router-dom";
-import SupprimerMission from "../../components/modalSuppression";
+import SupprimerMission from "../modalSuppression";
 
 function ListeMissions({ filtre }) {
   // missions : la valeur actuelle, setMissions : fonction pour la modifier , [] : valeur de départ
@@ -63,7 +63,7 @@ function ListeMissions({ filtre }) {
                     <span
                       className="trash-icon"
                       data-bs-toggle="modal"
-                      data-bs-target="#modalSupprimer"
+                      data-bs-target="#modalSupprimer" // # signifie : cherche l'élément avec cet id
                       onClick={(e) =>
                         setMissionSelectionnee(mission.id)
                       }
