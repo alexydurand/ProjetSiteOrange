@@ -37,14 +37,17 @@ function Organigramme() {
               <AccordionItem id="collapseOperations" title="Opérations">
                 <div className="accordion" id="accordionDISU">
                   {/* Accordion DISU dans Opérations */}
-                  <AccordionItem id="collapseDISU" title="DISU">
+                  <AccordionItem id="collapseDISU" title="DISU (Direction Infogérence et Service Utilisateurs)">
                     <div className="accordion" id="accordionDTI">
                       {/* Accordion DTI dans DISU */}
-                      <AccordionItem id="collapseDTI" title="Direction Technique et Intégration">
+                      <AccordionItem
+                        id="collapseDTI"
+                        title="Direction Technique et Intégration"
+                      >
                         <div className="accordion" id="accordionAPV">
                           {/* Accordion APV dans DTI */}
                           <AccordionItem id="collapseAPV" title="APV">
-                            <ul>
+                            <ul class="fs-4">
                               <li>
                                 <a
                                   href="https://annuaire-sec.sso.infra.ftgroup/persons/57lppgs_1IADjHYH_9OurA%3D%3D"
@@ -61,7 +64,7 @@ function Organigramme() {
                                 <div className="accordion" id="accordionAMEC">
                                   {/* Accordion AMEC dans APV */}
                                   <AccordionItem id="collapseAMEC" title="AMEC">
-                                    <ul>
+                                    <ul class="fs-4">
                                       <li>
                                         <a
                                           href="https://annuaire-sec.sso.infra.ftgroup/persons/H2hHoAuidzcDjHYH_9OurA%3D%3D"
@@ -97,15 +100,17 @@ function Organigramme() {
                                 {/* Accordion BAVO dans APV */}
                                 <div className="accordion" id="accordionBAVO">
                                   <AccordionItem id="collapseBAVO" title="BAVO">
-                                    <li>
-                                      <a
-                                        href="https://annuaire-sec.sso.infra.ftgroup/persons/XwEqZNjQXUoDjHYH_9OurA%3D%3D"
-                                        target="_blank"
-                                        rel="noreferrer"
-                                      >
-                                        Alexis VALLET
-                                      </a>
-                                    </li>
+                                    <ul>
+                                      <li class="fs-4">
+                                        <a
+                                          href="https://annuaire-sec.sso.infra.ftgroup/persons/XwEqZNjQXUoDjHYH_9OurA%3D%3D"
+                                          target="_blank"
+                                          rel="noreferrer"
+                                        >
+                                          Alexis VALLET
+                                        </a>
+                                      </li>
+                                    </ul>
                                   </AccordionItem>
                                 </div>
                               </div>
@@ -123,11 +128,17 @@ function Organigramme() {
           <div className="col-md-6">
             <div className="accordion" id="accordionDTOF">
               {/* Accordion DTOF dans OF */}
-              <AccordionItem id="collapseDTOF" title="Direction Technique Orange France">
+              <AccordionItem
+                id="collapseDTOF"
+                title="Direction Technique Orange France"
+              >
                 <div className="accordion" id="accordionPFC">
                   {/* Accordion PFC dans DTOF */}
-                  <AccordionItem id="collapsePFC" title="PFC (Plateformes Cloud)">
-                    <ul>
+                  <AccordionItem
+                    id="collapsePFC"
+                    title="PFC (Plateformes Cloud)"
+                  >
+                    <ul class="fs-4">
                       <li>
                         <a
                           href="https://annuaire-sec.sso.infra.ftgroup/persons/W00P7xV20J0DjHYH_9OurA%3D%3D"

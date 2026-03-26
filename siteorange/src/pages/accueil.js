@@ -4,6 +4,7 @@ import logoPowerAutomate from "../assets/powerAutomateLogo.png";
 import logoSharePoint from "../assets/sharePointLogo.png";
 import logoReact from "../assets/reactLogo.png";
 import imgCampus from "../assets/campusOrange.jpg";
+import { NavLink } from "react-router-dom";
 
 function Accueil() {
   return (
@@ -13,18 +14,30 @@ function Accueil() {
         <div className="row align-items-center">
           {/* Première colonne : paragraphe de bienvenue */}
           <div className="col-md-6">
-            <h1>
+            <h1 class="fs-1">
               Bienvenue sur mon <span style={{ color: "#ff7900" }}>site</span>
             </h1>
             <hr></hr>
-            <p>
+            <p class="fs-4">
               Dans le cadre de mon stage de 2ème année de BUT Informatique, j'ai
               intégré l'équipe DISU d'Orange Campus Tolosa à Balma.
-            </p>
-            <p>
+              <br></br><br></br>
               Ce site présente mon expérience, les projets sur lesquels j'ai
               travaillé ainsi que l'équipe qui m'accompagne.
             </p>
+            
+            <NavLink to="/equipe">
+              <button className="btn btn-primary btn-lg mt-2">
+                L'équipe
+              </button>
+            </NavLink>
+            &nbsp; 
+            <NavLink to="/projet">
+              <button className="btn btn-secondary btn-lg mt-2">
+                Mes missions
+              </button>
+            </NavLink>
+
           </div>
           {/* Deuxième colonne : 4 logos */}
           <div className="col-md-6 ps-5">
@@ -82,7 +95,7 @@ function Accueil() {
               <div class="accordion-item">
                 <h2 class="accordion-header">
                   <button
-                    class="accordion-button"
+                    class="accordion-button fs-3"
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#panelsStayOpen-collapseOne"
@@ -97,7 +110,7 @@ function Accueil() {
                   class="accordion-collapse collapse show"
                 >
                   {/* Liste des objectifs de mon stage */}
-                  <ol class="list-group list-group-numbered"> {/* ol = liste ordonnée */}
+                  <ol class="list-group list-group-numbered fs-4"> {/* ol = liste ordonnée */}
                     <li class="list-group-item">Collaborer en équipe.</li>
                     <li class="list-group-item">
                       Comprendre la configuration des serveurs.

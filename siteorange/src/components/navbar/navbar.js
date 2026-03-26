@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom"; /* Redirige vers une page et ajoute automatiquement la classe active */
-import logoOrange from "../assets/logoOrange.svg";
+import logoOrange from "../../assets/logoOrange.svg";
+import '../navbar/navbar.css';
 
 /* Composant Navbar */
 
@@ -31,17 +32,18 @@ function Navbar() {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+          
           <div className="navbar-nav">
-            {/* Redirection vers / donc la page d'accueil */}
-            <NavLink className="nav-link" to="/">
+            {/* Redirection vers /  */}
+            <NavLink className="nav-link fs-4" to="/">
               Accueil
             </NavLink>
             {/* Redirection vers la page equipe */}
-            <NavLink className="nav-link" to="/equipe">
+            <NavLink className="nav-link fs-4" to="/equipe">
               Équipe
             </NavLink>
             {/* Redirection vers la page projet */}
-            <NavLink className="nav-link" to="/projet">
+            <NavLink className="nav-link fs-4" to="/projet">
               Mes Projets
             </NavLink>
           </div>

@@ -22,7 +22,7 @@ function ListeMissions({ filtre }) {
     chargerMissions();
   }, []);
 
-  let missionsFiltrees; // let = variable modifiable
+  let missionsFiltrees; // let : variable locale
   if (filtre === "all") {
     missionsFiltrees = missions; // affichage de toutes les missions si le le bouton "Toutes mes missions" est sélectionné
   } else {
@@ -40,7 +40,6 @@ function ListeMissions({ filtre }) {
           mission, //.map : méhode qui parcourt chaque élément d'un tableau
         ) => (
           <div className="accordion mb-2" key={mission.id}>
-            {/* Récupération de l'id de la mission */}
             <div className="accordion-item">
               <h2 className="accordion-header">
                 <button
@@ -50,7 +49,7 @@ function ListeMissions({ filtre }) {
                   data-bs-target={`#collapse-${mission.id}`}
                   aria-expanded="true"
                 >
-                  <span>
+                  <span class="fs-3">
                     {mission.nom} : venant de&nbsp;
                     <span style={{ color: "#ff7900" }}>
                       {mission.provenance}
@@ -79,7 +78,7 @@ function ListeMissions({ filtre }) {
                 className="accordion-collapse collapse show"
               >
                 <div className="accordion-body">
-                  <p>{mission.description}</p>{" "}
+                  <p class="fs-4">{mission.description}</p>{" "}
                   {/* Récupération de la description de la mission */}
                 </div>
               </div>

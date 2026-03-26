@@ -9,9 +9,9 @@ function Projet() {
   return (
     <>
       <div className="container mt-5">
-        <div className="d-flex justify-content-between align-items-center">
+        <div className="d-flex justify-content-between align-items-center"> {/* d-flex : classe boosted qui place les éléments les uns à coté des autres et pas en dessous */}
           <h1>Mes<span style={{color: '#ff7900'}}> missions</span></h1>
-          <div className="d-flex align-items-center gap-3">
+          <div className="d-flex align-items-center gap-4"> 
             <ul className="list-unstyled d-flex gap-2 flex-wrap m-0">
               <li>
                 {/* type radio pour avoir qu'un seul bouton selectionnable à la fois */}

@@ -4,7 +4,7 @@ import Equipe from "./pages/equipe/equipe";
 import Projets from "./pages/projet";
 import FormulaireMission from "./pages/formulaireMission";
 import Footer from "./components/footer";
-import Navbar from "./components/navbar";
+import Navbar from "./components/navbar/navbar";
 import ModificationMission from "./pages/modificationMission";
 
 
