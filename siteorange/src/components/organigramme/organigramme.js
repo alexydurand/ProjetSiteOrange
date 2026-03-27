@@ -29,15 +29,8 @@ function AccordionItem({ id, title, children }) {
 
 function Organigramme() {
   useEffect(() => {
-    const tooltipTriggerList = document.querySelectorAll(
-      '[data-bs-toggle="tooltip"]',
-    );
-    [...tooltipTriggerList].map(
-      (el) =>
-        new Tooltip(el, {
-          html: true,
-        }),
-    );
+    const tooltipTriggerList = document.querySelectorAll("[data-bs-placement]");
+    [...tooltipTriggerList].map((el) => new Tooltip(el, { html: true }));
   }, []);
 
   return (
@@ -71,7 +64,6 @@ function Organigramme() {
                                 <button
                                   type="button"
                                   className="btn btn-outline-secondary"
-                                  data-bs-toggle="tooltip"
                                   data-bs-placement="right"
                                   data-bs-title="<u>Fonction :</u><br> Manager de l'entité APV"
                                 >
@@ -86,7 +78,6 @@ function Organigramme() {
                                 <button
                                   type="button"
                                   className="btn btn-outline-secondary"
-                                  data-bs-toggle="tooltip"
                                   data-bs-placement="right"
                                   data-bs-title="<u>Fonction :</u><br> Administration des Services M365"
                                 >
@@ -101,7 +92,6 @@ function Organigramme() {
                                 <button
                                   type="button"
                                   className="btn btn-outline-secondary"
-                                  data-bs-toggle="tooltip"
                                   data-bs-placement="right"
                                   data-bs-title="<u>Fonction :</u><br> "
                                 >
@@ -123,7 +113,6 @@ function Organigramme() {
                                         <button
                                           type="button"
                                           className="btn btn-outline-secondary"
-                                          data-bs-toggle="tooltip"
                                           data-bs-placement="right"
                                           data-bs-title="<u>Fonction :</u> <br/>Stagiaire BUT Informatique 2ème année"
                                         >
@@ -139,7 +128,6 @@ function Organigramme() {
                                         <button
                                           type="button"
                                           className="btn btn-outline-secondary"
-                                          data-bs-toggle="tooltip"
                                           data-bs-placement="right"
                                           data-bs-title="<u>Fonction :</u><br> Alternant préparant un Master MIAGE à l'université Toulouse Capitole<br>"
                                         >
@@ -154,7 +142,6 @@ function Organigramme() {
                                         <button
                                           type="button"
                                           className="btn btn-outline-secondary"
-                                          data-bs-toggle="tooltip"
                                           data-bs-placement="right"
                                           data-bs-title="<u>Fonction :</u><br>Stagiaire BUT R&T 3ème année "
                                         >
@@ -177,7 +164,6 @@ function Organigramme() {
                                         <button
                                           type="button"
                                           className="btn btn-outline-secondary"
-                                          data-bs-toggle="tooltip"
                                           data-bs-placement="right"
                                           data-bs-title="<u>Fonction :</u><br> Alternant"
                                         >
@@ -192,7 +178,6 @@ function Organigramme() {
                                         <button
                                           type="button"
                                           className="btn btn-outline-secondary"
-                                          data-bs-toggle="tooltip"
                                           data-bs-placement="right"
                                           data-bs-title="<u>Fonction :</u><br> Administrateur Technique de l'Exploitation"
                                         >
@@ -207,7 +192,6 @@ function Organigramme() {
                                         <button
                                           type="button"
                                           className="btn btn-outline-secondary"
-                                          data-bs-toggle="tooltip"
                                           data-bs-placement="right"
                                           data-bs-title="<u>Fonction :</u><br> Ingénieur de production"
                                         >
@@ -250,7 +234,6 @@ function Organigramme() {
                         <button
                           type="button"
                           className="btn btn-outline-secondary"
-                          data-bs-toggle="tooltip"
                           data-bs-placement="right"
                           data-bs-title="<u>Fonction :</u><br> Experte en technologie Microsoft"
                         >
@@ -263,7 +246,6 @@ function Organigramme() {
                         <button
                           type="button"
                           className="btn btn-outline-secondary"
-                          data-bs-toggle="tooltip"
                           data-bs-placement="right"
                           data-bs-title="<u>Fonction :</u><br> Alternante"
                         >

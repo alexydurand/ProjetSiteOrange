@@ -1,0 +1,9 @@
+.carousel-reduit {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.carousel-reduit img {
+  height: 250px;
+  object-fit: contain;
+}
