@@ -1,10 +1,24 @@
 import ListeMissions from "../components/listeMissions/listeMissions";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
+import { useEffect } from "react";
 
 function Projet() {
   // variable filtre , valeur de base 'all' : toutes les missions
   const [filtre, setFiltre] = useState("all");
+  const [missions, setMissions] = useState([]);
+
+  const chargerMissions = () => {
+    fetch(`http://localhost:3001/api/missions`)
+      .then((res) => res.json())
+      .then((data) => {
+        setMissions(data);
+      });
+  };
+
+  useEffect(() => {
+    chargerMissions();
+  }, []);
 
   return (
     <>
@@ -13,7 +27,7 @@ function Projet() {
           {" "}
           {/* d-flex : classe boosted qui place les éléments les uns à coté des autres et pas en dessous */}
           <h1>
-            Mes<span style={{ color: "#ff7900" }}> missions</span>
+            Mes {missions.length} <span style={{ color: "#ff7900" }}> missions</span>
           </h1>
           <div className="d-flex align-items-center gap-4">
             <ul className="list-unstyled d-flex gap-2 flex-wrap m-0">
@@ -86,14 +100,8 @@ function Projet() {
         </div>
       </div>
       {/* appel du composant ListeMissions avec comme paramètre : filtre (définis par défaut sur all)*/}
-      <ListeMissions filtre={filtre} />
-      <nav aria-label="Back to top" class="back-to-top">
-        <a
-          href="#top"
-          class="back-to-top-link btn btn-icon btn-outline-secondary"
-        > 
-        </a>
-      </nav>
+      <ListeMissions filtre={filtre} missions={missions} rafraichir={chargerMissions}/>
+      
     </>
   );
 }

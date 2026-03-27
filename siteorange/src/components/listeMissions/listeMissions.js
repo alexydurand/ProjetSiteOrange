@@ -7,21 +7,11 @@ import "./listeMissions.css";
 import { NavLink } from "react-router-dom";
 import SupprimerMission from "../modalSuppression";
 
-function ListeMissions({ filtre }) {
-  // missions : la valeur actuelle, setMissions : fonction pour la modifier , [] : valeur de départ
-  const [missions, setMissions] = useState([]);
+function ListeMissions({ filtre, missions, rafraichir }) {
+ 
   const [missionSelectionnee, setMissionSelectionnee] = useState(null);
 
-  const chargerMissions = () => {
-    fetch("http://localhost:3001/api/missions")
-      .then((res) => res.json())
-      .then((data) => setMissions(data));
-  };
-
-  useEffect(() => {
-    chargerMissions();
-  }, []);
-
+  
   let missionsFiltrees; // let : variable locale
   if (filtre === "all") {
     missionsFiltrees = missions; // affichage de toutes les missions si le le bouton "Toutes mes missions" est sélectionné
@@ -34,7 +24,7 @@ function ListeMissions({ filtre }) {
 
   return (
     <div className="container mt-5">
-      <SupprimerMission id={missionSelectionnee} rafraichir={chargerMissions} />
+      <SupprimerMission id={missionSelectionnee} rafraichir={rafraichir} />
       {missionsFiltrees.map(
         (
           mission, //.map : méhode qui parcourt chaque élément d'un tableau
@@ -49,7 +39,7 @@ function ListeMissions({ filtre }) {
                   data-bs-target={`#collapse-${mission.id}`}
                   aria-expanded="true"
                 >
-                  <span class="fs-3">
+                  <span className="fs-3">
                     {mission.nom} : venant de&nbsp;
                     <span style={{ color: "#ff7900" }}>
                       {mission.provenance}
@@ -78,7 +68,7 @@ function ListeMissions({ filtre }) {
                 className="accordion-collapse collapse show"
               >
                 <div className="accordion-body">
-                  <p class="fs-4">{mission.description}</p>{" "}
+                  <p className="fs-4">{mission.description}</p>{" "}
                   {/* Récupération de la description de la mission */}
                 </div>
               </div>

@@ -14,11 +14,11 @@ function Accueil() {
         <div className="row align-items-center">
           {/* Première colonne : paragraphe de bienvenue */}
           <div className="col-md-6">
-            <h1 class="fs-1">
+            <h1 className="fs-1">
               Bienvenue sur mon <span style={{ color: "#ff7900" }}>site</span>
             </h1>
             <hr></hr>
-            <p class="fs-4">
+            <p className="fs-4">
               Dans le cadre de mon stage de 2ème année de BUT Informatique, j'ai
               intégré l'équipe DISU d'Orange Campus Tolosa à Balma.
               <br></br>
@@ -31,7 +31,7 @@ function Accueil() {
             </NavLink>
             &nbsp;
             <NavLink to="/projet">
-              <button className="btn btn-secondary btn-lg mt-2">
+              <button className="btn btn-outline-secondary btn-lg mt-2">
                 Mes missions
               </button>
             </NavLink>
@@ -92,11 +92,11 @@ function Accueil() {
             />
           </div>
           <div className="col-md-6">
-            <div class="accordion" id="accordionPanelsStayOpenExample">
-              <div class="accordion-item">
-                <h2 class="accordion-header">
+            <div className="accordion" id="accordionPanelsStayOpenExample">
+              <div className="accordion-item">
+                <h2 className="accordion-header">
                   <button
-                    class="accordion-button fs-3"
+                    className="accordion-button fs-3"
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#panelsStayOpen-collapseOne"
@@ -110,27 +110,27 @@ function Accueil() {
                 </h2>
                 <div
                   id="panelsStayOpen-collapseOne"
-                  class="accordion-collapse collapse show"
+                  className="accordion-collapse collapse show"
                 >
                   {/* Liste des objectifs de mon stage */}
-                  <ol class="list-group list-group-numbered fs-4">
+                  <ol className="list-group list-group-numbered fs-4">
                     {" "}
                     {/* ol = liste ordonnée */}
-                    <li class="list-group-item">Collaborer en équipe.</li>
-                    <li class="list-group-item">
+                    <li className="list-group-item">Collaborer en équipe.</li>
+                    <li className="list-group-item">
                       Comprendre la configuration des serveurs.
                     </li>
-                    <li class="list-group-item">
+                    <li className="list-group-item">
                       Renforcer mes compétences en documentation et en
                       communication technique.
                     </li>
-                    <li class="list-group-item">
+                    <li className="list-group-item">
                       Acquérir des compétences en développement d'application.
                     </li>
-                    <li class="list-group-item">
+                    <li className="list-group-item">
                       Collaborer avec des alternants ou membres de l'équipe.
                     </li>
-                    <li class="list-group-item">
+                    <li className="list-group-item">
                       Collaborer aux différentes réunions Agile et comprendre
                       les rôles associés.
                     </li>

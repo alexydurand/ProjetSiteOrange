@@ -1,7 +1,23 @@
 import { useNavigate } from "react-router-dom";
+import { useState,useEffect } from "react";
+
 
 function SupprimerMission({ id, rafraichir }) {
   const navigate = useNavigate();
+  
+  const [nom, setNom] = useState("");
+
+  useEffect(() => {
+
+    if(!id) return;
+
+    fetch(`http://localhost:3001/api/missions/${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setNom(data.nom);
+      });
+      
+  }, [id]);
 
   // fonction permettante de supprimer une mission via son id
   const handleDelete = async () => {
@@ -18,36 +34,36 @@ function SupprimerMission({ id, rafraichir }) {
 
   return (
     <>
-      <div class="modal" id="modalSupprimer" tabindex="-1">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Supprimer cette mission</h5>
+      <div className="modal" id="modalSupprimer" tabIndex="-1">
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title">Suppression mission</h5>
               <button
                 type="button"
-                class="btn-close"
+                className="btn-close"
                 data-bs-dismiss="modal"
                 data-bs-toggle="tooltip"
                 data-bs-placement="bottom"
                 data-bs-title="Close"
               >
-                <span class="visually-hidden">Annuler</span>
+                <span className="visually-hidden">Annuler</span>
               </button>
             </div>
-            <div class="modal-body">
-              <p>Voulez-vous vraiment supprimer cette mission ?</p>
+            <div className="modal-body">
+              <p>Voulez-vous vraiment supprimer la mission : "{nom}" ?</p>
             </div>
-            <div class="modal-footer">
+            <div className="modal-footer">
               <button
                 type="button"
-                class="btn btn-outline-secondary"
+                className="btn btn-outline-secondary"
                 data-bs-dismiss="modal"
               >
                 Annuler
               </button>
               <button
                 type="button"
-                class="btn btn-primary"
+                className="btn btn-primary"
                 data-bs-dismiss="modal"
                 onClick={handleDelete}
               >
